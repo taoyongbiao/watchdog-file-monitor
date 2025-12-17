@@ -5,15 +5,17 @@
 测试 file_monitor.py Web 服务功能的脚本
 """
 
-import requests
 import time
+
+import requests
+
 
 def test_service():
     """测试 Web 服务功能"""
     base_url = "http://localhost:8080"
-    
+
     print("测试文件监控服务...")
-    
+
     # 测试服务状态
     print("\n1. 测试服务状态接口:")
     try:
@@ -28,7 +30,7 @@ def test_service():
     except requests.exceptions.ConnectionError:
         print("   错误: 无法连接到服务，请确保服务正在运行")
         return
-    
+
     # 测试手动扫描
     print("\n2. 测试手动扫描接口:")
     try:
@@ -43,7 +45,7 @@ def test_service():
             print(f"   错误: HTTP {response.status_code}")
     except requests.exceptions.RequestException as e:
         print(f"   错误: {e}")
-    
+
     # 测试不存在的接口
     print("\n3. 测试不存在的接口:")
     try:
@@ -57,6 +59,7 @@ def test_service():
             print(f"   意外响应: HTTP {response.status_code}")
     except requests.exceptions.RequestException as e:
         print(f"   错误: {e}")
+
 
 if __name__ == "__main__":
     test_service()

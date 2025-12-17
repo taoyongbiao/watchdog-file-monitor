@@ -1,0 +1,15 @@
+# 自动识别Python文件
+*.py text eol=lf
+
+# 指定特定文件的换行符
+.gitattributes text eol=lf
+.gitignore text eol=lf
+
+# README文件
+README.md text eol=lf
+UI_README.md text eol=lf
+USAGE.md text eol=lf
+
+# 配置文件
+.pre-commit-config.yaml text eol=lf
+requirements.txt text eol=lf
